@@ -9,7 +9,7 @@ const authHeaders = () => ({
 });
 
 export const fetchReservas = async () => {
-  const res = await fetch(`${API_URL}/reserva/listar`, {
+  const res = await fetch(`${BASE_URL}/reserva/listar`, {
     headers: authHeaders(),
   });
 
@@ -18,7 +18,7 @@ export const fetchReservas = async () => {
 };
 
 export const guardarReserva = async (payload) => {
-  const res = await fetch(`${API_URL}/reserva/guardar`, {
+  const res = await fetch(`${BASE_URL}/reserva/guardar`, {
     method: "POST",
     headers: authHeaders(),
     body: JSON.stringify(payload),
@@ -37,7 +37,7 @@ export const guardarReserva = async (payload) => {
    OBTENER MIS RESERVAS (USER)
 ========================== */
 export const fetchMisReservas = async () => {
-  const res = await fetch(`${API_URL}/reserva/listarReservaUsuario`, {
+  const res = await fetch(`${BASE_URL}/reserva/listarReservaUsuario`, {
     method: "GET",
     headers: authHeaders(),
   });
@@ -51,7 +51,7 @@ export const fetchMisReservas = async () => {
 };
 
 export const editarReserva = async (id, payload) => {
-  const res = await fetch(`${API_URL}/reserva/editar/${id}`, {
+  const res = await fetch(`${BASE_URL}/reserva/editar/${id}`, {
     method: "PATCH",
     headers: authHeaders(),
     body: JSON.stringify(payload),
@@ -66,7 +66,7 @@ export const editarReserva = async (id, payload) => {
 };
 
 export const cancelarReserva = async (id) => {
-  const res = await fetch(`${API_URL}/reserva/cambiarEstado/${id}`, {
+  const res = await fetch(`${BASE_URL}/reserva/cambiarEstado/${id}`, {
     method: "PATCH",
     headers: authHeaders(),
     body: JSON.stringify({ estado: "CANCELADA" }),
