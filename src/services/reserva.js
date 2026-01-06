@@ -26,8 +26,8 @@ export const guardarReserva = async (payload) => {
 
   console.log(payload);
   if (!res.ok) {
-    const msg = await res.text();
-    throw new Error(msg);
+    const msg = await res.json();
+    throw new Error(msg.mensaje || "Error al guardar la reserva");
   }
 
   return res.json();
@@ -43,8 +43,8 @@ export const fetchMisReservas = async () => {
   });
 
   if (!res.ok) {
-    const msg = await res.text();
-    throw new Error(msg);
+    const msg = await res.json();
+    throw new Error(msg.mensaje);
   }
 
   return res.json();
@@ -58,8 +58,8 @@ export const editarReserva = async (id, payload) => {
   });
 
   if (!res.ok) {
-    const msg = await res.text();
-    throw new Error(msg);
+    const msg = await res.json();
+    throw new Error(msg.mensaje);
   }
 
   return res.json();
@@ -73,8 +73,8 @@ export const cancelarReserva = async (id) => {
   });
 
   if (!res.ok) {
-    const msg = await res.text();
-    throw new Error(msg);
+    const msg = await res.json();
+    throw new Error(msg.mensaje);
   }
 
   return res.json();
