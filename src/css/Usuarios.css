@@ -1,0 +1,220 @@
+/* Usuarios.css */
+
+/* Contenedor general */
+.usuarios-container {
+   padding: 20px;
+   width: 100%;
+   overflow-x: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: 'Arial', sans-serif;
+}
+
+/* Barra de búsqueda y botón registrar */
+.usuarios-toolbar {
+   margin: 15px 0;
+   display: flex;
+   gap: 10px;
+   width: 100%;
+   max-width: 600px;
+}
+
+.usuarios-toolbar input {
+   flex: 1;
+   padding: 8px 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+}
+
+.usuarios-toolbar button {
+   padding: 8px 12px;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   background-color: #4CAF50;
+   cursor: pointer;
+   transition: background-color 0.2s;
+}
+
+.usuarios-toolbar button:hover {
+   background-color: #45a049;
+}
+
+/* Tabla de usuarios */
+.usuarios-table {
+   border-collapse: collapse;
+   width: 100%;
+   max-width: 1200px;
+   text-align: center;
+   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+   margin-top: 10px;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+   padding: 12px 15px;
+}
+
+.usuarios-table th {
+   background-color: #f0f0f0;
+   font-weight: 600;
+}
+
+.usuarios-table tbody tr {
+   border-bottom: 1px solid #ddd;
+   transition: background-color 0.2s;
+}
+
+.usuarios-table tbody tr:hover {
+   background-color: #f9f9f9;
+}
+
+/* Botones de acción en la tabla */
+.action-btn {
+   cursor: pointer;
+   border: none;
+   background: none;
+   font-size: 18px;
+   margin: 0 3px;
+   transition: transform 0.2s;
+}
+
+.action-btn:hover {
+   transform: scale(1.2);
+}
+
+/* Modal */
+.modal-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+.modal-content {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   min-width: 320px;
+   max-width: 400px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.modal-content input {
+   padding: 8px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+}
+
+.modal-actions {
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+}
+
+.modal-actions button {
+   padding: 8px 12px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.modal-actions .cancel-btn {
+   background-color: #ccc;
+   border: none;
+}
+
+.modal-actions .save-btn {
+   background-color: #4CAF50;
+   border: none;
+   color: #fff;
+}
+
+.action-btn {
+   border: none;
+   background: none;
+   cursor: pointer;
+   font-size: 1.1rem;
+   margin: 0 5px;
+}
+
+/* Fondo semi-transparente para cualquier modal */
+.modal-overlay,
+.modal-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   /* fondo oscuro */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+/* Contenido del modal (registro y edición) */
+.modal,
+.modal-content {
+   background: white;
+   padding: 20px;
+   border-radius: 10px;
+   min-width: 350px;
+   max-width: 450px;
+   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   animation: animate__fadeInDown 0.5s;
+   /* animación con animate.css */
+}
+
+/* Inputs dentro del modal */
+.modal input {
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+/* Contenedor de botones del modal */
+.modal-actions {
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+}
+
+/* Botones */
+.save-btn {
+   background-color: #4caf50;
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.cancel-btn {
+   background-color: #f44336;
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+   .usuarios-table {
+      font-size: 13px;
+   }
+}

@@ -1,0 +1,133 @@
+/* ===== CONTENEDOR GENERAL ===== */
+.container {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+   perspective: 1200px;
+   font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+   width: 350px;
+   height: 500px;
+}
+
+
+/* ===== CARD 3D ===== */
+.card-inner {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   transform-style: preserve-3d;
+   transition: transform 0.7s ease;
+}
+
+.card.flip .card-inner {
+   transform: rotateY(180deg);
+}
+
+/* ===== CARAS ===== */
+.card-face {
+   position: absolute;
+   inset: 0;
+   background: rgba(255, 255, 255, 0.95);
+   border-radius: 16px;
+   padding: 32px;
+   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+   backface-visibility: hidden;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   /* Empieza desde arriba, no centrado vertical */
+}
+
+/* BACK */
+.card-back {
+   transform: rotateY(180deg);
+}
+
+/* ===== SWITCH FIJO ARRIBA ===== */
+.switch {
+   display: flex;
+   width: 100%;
+   border-radius: 10px;
+   overflow: hidden;
+   background: #eaeaea;
+   margin-bottom: 32px;
+   /* espacio hasta el formulario */
+   flex-shrink: 0;
+   /* nunca se comprime */
+}
+
+/* Botones del switch */
+.switch button {
+   flex: 1;
+   padding: 12px;
+   border: none;
+   font-weight: 600;
+   cursor: pointer;
+   background: transparent;
+}
+
+.switch .active {
+   background: #111;
+   color: #fff;
+}
+
+/* ===== FORMULARIO CENTRADO ABAJO ===== */
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+   width: 100%;
+   align-items: center;
+   /* inputs centrados horizontalmente */
+   flex-grow: 1;
+   /* ocupa el resto del espacio */
+   justify-content: center;
+   /* centra verticalmente dentro del espacio restante */
+}
+
+form h2 {
+   margin-bottom: 10px;
+   font-size: 24px;
+   color: #111;
+}
+
+/* ===== INPUTS ===== */
+input {
+   padding: 14px;
+   border-radius: 10px;
+   border: 1px solid #ccc;
+   font-size: 15px;
+   transition: 0.3s;
+}
+
+input:focus {
+   outline: none;
+   border-color: #111;
+   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BOTÓN ===== */
+form button {
+   margin-top: 10px;
+   padding: 14px;
+   border-radius: 10px;
+   border: none;
+   background: #111;
+   color: white;
+   font-size: 16px;
+   font-weight: 600;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+form button:hover {
+   background: #000;
+   transform: translateY(-1px);
+}
