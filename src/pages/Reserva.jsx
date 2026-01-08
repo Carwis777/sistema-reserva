@@ -271,14 +271,20 @@ export default function Reserva() {
               }
             />
 
-            <select value={newReserva.idCampo} onChange={handleCampoChange}>
-              <option value="">Seleccione campo</option>
-              {campos.map((c) => (
-                <option key={c.idCampo} value={c.idCampo}>
-                  {c.nombre}
-                </option>
-              ))}
-            </select>
+            {campos.filter((c) => c.estado === "ACTIVO").length === 0 ? (
+              <p>No hay campos disponibles</p>
+            ) : (
+              <select value={newReserva.idCampo} onChange={handleCampoChange}>
+                <option value="">Seleccione campo</option>
+                {campos
+                  .filter((c) => c.estado === "ACTIVO")
+                  .map((c) => (
+                    <option key={c.idCampo} value={c.idCampo}>
+                      {c.nombre}
+                    </option>
+                  ))}
+              </select>
+            )}
 
             <input type="number" value={newReserva.precioHora} disabled />
             <input type="number" value={newReserva.duracion} disabled />
